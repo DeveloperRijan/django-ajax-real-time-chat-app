@@ -30,3 +30,14 @@ python/django ajax real time chat application without any sockets || Beginners f
 13. Open Source [MIT] - Feel free to practice it or use it anywhere if u like :)
 
 = Home Page
+![image](https://user-images.githubusercontent.com/38884716/124622664-24966580-de9d-11eb-98ed-23563ae91a1b.png)
+
+= Input Data to init chat
+![image](https://user-images.githubusercontent.com/38884716/124622828-4263ca80-de9d-11eb-90e2-b6206a0e85f4.png)
+
+= Messsages in Group
+![image](https://user-images.githubusercontent.com/38884716/124624007-50661b00-de9e-11eb-93ac-542b92386280.png)
+
+= Typing new message
+![image](https://user-images.githubusercontent.com/38884716/124624218-85726d80-de9e-11eb-97cd-8eddd60f5fe5.png)
+
