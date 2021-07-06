@@ -1,0 +1,43 @@
+body{
+    background-color: #efefef;
+}
+div.card-body{
+    padding: 15px;
+    box-shadow: 0 2px 4px 0 rgb(0 0 0 / 8%);
+}
+div.logo{
+    text-align: center;
+}
+div.logo img{
+    max-width: 130px;
+}
+
+
+.messages-box{
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 3px;
+    height: 350px;
+    overflow-y: auto;
+}
+.messages-box .single-msg{
+    background: #efefef;
+    padding: 10px;
+    border-top: 3px solid #888;
+    margin-bottom: 5px;
+}
+.messages-box .single-msg h5{
+    font-size: 16px;
+}
+.messages-box .single-msg p{
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+}
+.messages-box .single-msg small{
+    font-size: 12px;
+}
+.messages-box .auth-user-msg{
+    text-align: right;
+}

@@ -1,0 +1,86 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="{% static 'css/bootstrap5.0.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+    <title>Django AJAX Real Time Chat App</title>
+  </head>
+  <body>
+
+    <div class='container'>
+        <div class='row'>
+            <div class='col-lg-2 col-md-12'></div>
+            <div class='col-lg-8 col-md-12'>
+                <div class='logo p-2'>
+                    <img src="{% static 'images/logo.png' %}" alt='Logo'/>
+                </div>
+                <div class="card mt-1">
+                    <h5 class='text-center p-2 bg-dark text-white m-0'>Reat Time Chat Application</h5>
+                    <div class="card-header">
+                        Hello <b>{{user.username}}</b> <br>
+                        Welcome to <b>{{group.name}}</b> group
+                    </div>
+                    <div class="card-body">
+
+                        {% for alert in messages %}
+                        <div class="alert alert-warning d-flex align-items-center alert-dismissible fade show"" role="alert">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2" viewBox="0 0 16 16" role="img" aria-label="Warning:">
+                                <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                            </svg>
+                            <div class='d-flex justify-content-between'>
+                                <div>{{alert}}</div> <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                        </div>
+                        {% endfor %}
+
+                        <div class='messages-box'>
+                            <div class='single-msg'>
+                                <h5>Rijan</h5>
+                                <p>Messages goes here</p>
+                                <small>15 Jun 2021 , 01.30 AM</small>
+                            </div>
+                            <div class='single-msg auth-user-msg'>
+                                <h5>Rijan</h5>
+                                <p>Messages goes here</p>
+                                <small>15 Jun 2021 , 01.30 AM</small>
+                            </div>
+                            <div class='single-msg'>
+                                <h5>Rijan</h5>
+                                <p>Messages goes here</p>
+                                <small>15 Jun 2021 , 01.30 AM</small>
+                            </div>
+                            <div class='single-msg'>
+                                <h5>Rijan</h5>
+                                <p>Messages goes here</p>
+                                <small>15 Jun 2021 , 01.30 AM</small>
+                            </div>
+                        </div>
+                        <form action='{% url 'send_msg' %}' method='POST'>
+                            {% csrf_token %}
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" name='message' placeholder="Message">
+                                <label for="floatingInput">Type Message ...</label>
+                            </div>
+                            <div class='from-group mt-2'>
+                                <button class='btn btn-warning btn-sm'>Send</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class='col-lg-2 col-md-12'></div>
+        </div>
+    </div>
+
+    <!-- scripts -->
+    <script src="{% static 'js/bootstrap.5.0.bundle.min.js' %}"></script>
+  </body>
+</html>
